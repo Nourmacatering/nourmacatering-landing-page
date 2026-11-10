@@ -131,3 +131,65 @@ if (askTrigger && askPanel) {
     console.error("Nourma scroll reveal initialization error:", error);
   }
 })();
+
+
+// ─── Privacy Policy Popup ────────────────────────────────────────────────────
+(function initPrivacyPopup() {
+  const STORAGE_KEY = 'nourma_privacy_accepted';
+
+  // Don't show if user already responded
+  if (localStorage.getItem(STORAGE_KEY)) return;
+
+  const banner   = document.getElementById('privacy-banner');
+  const modal    = document.getElementById('privacy-modal-backdrop');
+  if (!banner) return;
+
+  // Show banner after a short delay so it doesn't snap in immediately
+  setTimeout(() => banner.classList.add('is-visible'), 800);
+
+  function acceptPrivacy() {
+    localStorage.setItem(STORAGE_KEY, 'accepted');
+    banner.classList.add('is-hidden');
+    banner.classList.remove('is-visible');
+    closeModal();
+  }
+
+  function declinePrivacy() {
+    localStorage.setItem(STORAGE_KEY, 'declined');
+    banner.classList.add('is-hidden');
+    banner.classList.remove('is-visible');
+    closeModal();
+  }
+
+  function openModal() {
+    if (!modal) return;
+    modal.classList.add('is-open');
+    modal.querySelector('.privacy-modal')?.setAttribute('tabindex', '-1');
+    modal.querySelector('.privacy-modal')?.focus();
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  // Banner buttons
+  document.getElementById('privacy-accept')?.addEventListener('click', acceptPrivacy);
+  document.getElementById('privacy-decline')?.addEventListener('click', declinePrivacy);
+  document.getElementById('privacy-learn-more')?.addEventListener('click', openModal);
+
+  // Modal buttons
+  document.getElementById('privacy-modal-accept')?.addEventListener('click', acceptPrivacy);
+  document.getElementById('privacy-modal-decline')?.addEventListener('click', declinePrivacy);
+  document.getElementById('privacy-modal-close')?.addEventListener('click', closeModal);
+
+  // Close modal on backdrop click
+  modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+  // Close modal on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal?.classList.contains('is-open')) closeModal();
+  });
+})();
