@@ -1,80 +1,23 @@
-# Nourma Catering – Landing Page
+# Nourma Catering — Landing Page Preview
 
-Landing page resmi untuk **Nourma Catering**, layanan katering profesional untuk berbagai acara.
+A responsive starter landing page for Nourma Postpartum Meals.
 
----
+## Project structure
+- `index.html` — page structure and Indonesian copy
+- `css/style.css` — responsive layout and brand styling
+- `js/script.js` — mobile navigation, WhatsApp CTA, and footer year
+- `assets/logo.png` — supplied Nourma logo
 
-## Struktur Proyek
+## Preview locally
+Open `index.html` in a browser. For best local development, use a Live Server extension in Kiro/VS Code.
 
-```
-nourmacatering-landing-page/
-├── index.html          # Halaman utama (single-page)
-├── css/
-│   └── style.css       # Stylesheet utama
-├── js/
-│   └── main.js         # JavaScript utama
-├── assets/
-│   └── images/         # Logo, foto menu, foto galeri, dll.
-├── .gitignore
-└── README.md
-```
+## Before publishing
+1. Replace `628xxxxxxxxxx` in `js/script.js` with Nourma's official WhatsApp number.
+2. Confirm the menu, package details, pricing, delivery coverage, and halal-related wording.
+3. Replace example food photography with Nourma's actual menu photos when available.
+4. Confirm all claims and nutrition details before publication.
 
----
-
-## Teknologi
-
-- **HTML5** – Semantik & aksesibel
-- **CSS3** – Custom properties, CSS Grid, Flexbox, responsive design
-- **JavaScript (Vanilla ES6+)** – Tanpa dependensi eksternal
-
----
-
-## Cara Menjalankan
-
-Karena ini adalah static website, cukup buka `index.html` di browser:
-
-```bash
-# Dengan VS Code Live Server:
-# Klik kanan index.html → "Open with Live Server"
-
-# Atau via Python HTTP server:
-python -m http.server 8000
-# Buka http://localhost:8000
-```
-
----
-
-## Seksi Halaman
-
-| Seksi | ID | Status |
-|---|---|---|
-| Navigasi | `#header` | ✅ Skeleton siap |
-| Hero | `#hero` | ✅ Skeleton siap |
-| Tentang Kami | `#about` | 🔧 Konten akan diisi |
-| Menu | `#menu` | 🔧 Konten akan diisi |
-| Layanan | `#services` | 🔧 Konten akan diisi |
-| Galeri | `#gallery` | 🔧 Konten akan diisi |
-| Testimoni | `#testimonials` | 🔧 Konten akan diisi |
-| Kontak | `#contact` | ✅ Form skeleton siap |
-| Footer | `#footer` | ✅ Skeleton siap |
-
----
-
-## Pengembangan Selanjutnya
-
-- [ ] Tambahkan logo & foto ke `assets/images/`
-- [ ] Isi konten seksi About dengan teks & foto
-- [ ] Tambahkan kartu menu dengan gambar dan harga
-- [ ] Tambahkan kartu layanan (wedding, corporate, dll.)
-- [ ] Isi galeri dengan foto kegiatan
-- [ ] Tambahkan kartu testimoni klien
-- [ ] Lengkapi informasi kontak (alamat, WhatsApp, Instagram)
-- [ ] Integrasikan link media sosial di footer
-- [ ] Optimasi SEO (Open Graph, sitemap, robots.txt)
-- [ ] Optimasi performa (lazy loading gambar, minifikasi aset)
-
----
-
-## Lisensi
-
-© 2024 Nourma Catering. All rights reserved.
+## Notes
+- The palette uses visual estimates sampled from the supplied logo: cream `#FCF7F0`, green `#5B6444`, terracotta accent `#C3967B`.
+- Cormorant Garamond is used as an approximate logo-style web font; the exact original logo font has not been confirmed.
+- Example menu content and imagery are illustrative and should not be presented as confirmed menu offerings.
