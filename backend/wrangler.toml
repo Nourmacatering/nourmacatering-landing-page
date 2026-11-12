@@ -1,0 +1,25 @@
+# Cloudflare Workers configuration
+# Phase 1 — Skeleton only, not yet deployed
+# Deploy command: wrangler deploy
+# Docs: https://developers.cloudflare.com/workers/
+
+name = "nourma-ai-assistant"
+main = "src/worker.js"
+compatibility_date = "2024-01-01"
+
+# Account ID — fill in after creating a Cloudflare account (free tier)
+# account_id = "PLACEHOLDER"
+
+# ── Environment Variables ────────────────────────────────────────────────────
+# DO NOT put API keys here. Use wrangler secrets instead:
+#   wrangler secret put GEMINI_API_KEY
+#
+# [vars]
+# ENVIRONMENT = "production"
+# ALLOWED_ORIGIN = "https://your-production-domain.com"
+
+# ── Routes ───────────────────────────────────────────────────────────────────
+# Uncomment and update when deploying to a custom domain
+# [[routes]]
+# pattern = "api.nourmacatering.id/chat"
+# zone_name = "nourmacatering.id"
