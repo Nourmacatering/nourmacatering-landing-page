@@ -2280,87 +2280,29 @@
        WHAT MAKES NOURMA DIFFERENT — restored section before packages
        ══════════════════════════════════════════════════════════ */
     .why-nourma {
-      display: grid;
-      grid-template-columns: minmax(320px, 47%) minmax(0, 53%);
-      align-items: center;
-      min-height: 860px;
-      padding: 88px 6.8%;
-      column-gap: clamp(56px, 6.5vw, 124px);
+      display: block;
+      min-height: 0;
+      padding: 76px 6.8% 82px;
       background: var(--cream);
       overflow: hidden;
       border-top: 1px solid rgba(92,107,68,.08);
       border-bottom: 1px solid rgba(92,107,68,.08);
     }
-    .why-nourma-photo {
-      position: relative;
-      height: clamp(560px, 38vw, 680px);
-      min-height: 0;
-      overflow: visible;
-      isolation: isolate;
-    }
-    .why-nourma-photo::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      inset: -18px 18px 18px -18px;
-      border: 2px solid rgba(196,130,106,.22);
-      border-radius: 24px;
-    }
-    .why-nourma-photo::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      width: 22%;
-      height: 22%;
-      right: -18px;
-      bottom: -18px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.62);
-      box-shadow: 0 12px 36px rgba(44,44,40,.06);
-    }
-    .why-nourma-photo img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      min-height: 0;
-      object-fit: cover;
-      object-position: center 25%;
-      border-radius: 22px;
-      box-shadow: 0 24px 50px rgba(44,44,40,.10);
-    }
+    /* Keep the original photo in the HTML, but remove it from this new layout. */
+    .why-nourma-photo { display: none; }
     .why-nourma-main {
-      padding: 48px 0;
+      width: 100%;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 0;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      max-width: 900px;
-    }
-    .why-nourma-description {
-      color: var(--muted);
-      font: 400 clamp(16px, 1.2vw, 18px)/1.8 var(--ff-sans);
-      margin: 0 0 36px;
-      max-width: 760px;
-    }
-    .why-nourma-cta {
-      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      align-self: flex-start;
-      margin-top: 42px;
-      min-width: 210px;
-      padding: 18px 30px;
-      border-radius: var(--radius-pill);
-      background: var(--sage);
-      color: var(--cream);
-      font: 600 14px/1 var(--ff-sans);
-      text-decoration: none;
-      box-shadow: var(--shadow-md);
-      transition: transform .2s, background .2s;
+      text-align: center;
     }
-    .why-nourma-cta:hover { background: var(--sage-dark); transform: translateY(-2px); }
     .why-nourma-kicker {
       display: block;
-      margin-bottom: 18px;
+      margin: 0 0 14px;
       color: var(--rose);
       font: 600 11px/1.5 var(--ff-sans);
       letter-spacing: .2em;
@@ -2370,64 +2312,91 @@
       color: var(--sage-dark);
       font: 500 clamp(42px, 4vw, 60px)/.98 var(--ff-serif);
       letter-spacing: -.025em;
-      margin: 0 0 36px;
+      margin: 0 0 18px;
+      max-width: 900px;
     }
     .why-nourma-title em {
       color: var(--rose);
       font-weight: 400;
     }
+    .why-nourma-description {
+      color: var(--muted);
+      font: 400 clamp(16px, 1.2vw, 18px)/1.7 var(--ff-sans);
+      margin: 0 auto 48px;
+      max-width: 850px;
+    }
     .why-nourma-feature-grid {
+      width: 100%;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: clamp(30px, 5vw, 78px);
+      row-gap: 38px;
+      text-align: left;
     }
     .why-nourma-feature {
-      min-height: 118px;
-      padding: 22px 20px;
-      background: var(--cream-dark);
-      border: 1px solid rgba(92,107,68,.08);
-      border-radius: 8px;
+      position: relative;
+      min-height: 0;
+      padding: 0 0 0 42px;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .why-nourma-feature::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      border: 2px solid var(--rose);
+      border-radius: 50%;
+      color: var(--rose);
+      font: 600 16px/1 var(--ff-sans);
     }
     .why-nourma-feature strong {
       display: block;
       color: var(--sage-dark);
-      font: 600 14px/1.5 var(--ff-sans);
-      margin-bottom: 9px;
+      font: 600 17px/1.45 var(--ff-serif);
+      margin: 0 0 10px;
     }
     .why-nourma-feature span {
       display: block;
       color: var(--muted);
-      font: 400 13px/1.6 var(--ff-sans);
+      font: 400 15px/1.65 var(--ff-sans);
     }
-    @media (max-width: 1050px) {
-      .why-nourma {
-        grid-template-columns: minmax(260px, 42%) minmax(0, 58%);
-        min-height: 0;
-        padding: 64px 5%;
-        column-gap: 38px;
-      }
-      .why-nourma-photo { height: 560px; }
-      .why-nourma-main { padding: 40px 0; }
-      .why-nourma-feature-grid { gap: 10px; }
+    /* Center the fourth existing feature rather than adding new copy. */
+    .why-nourma-feature:last-child {
+      grid-column: 2;
     }
-    @media (max-width: 680px) {
-      .why-nourma { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
       .why-nourma {
-        padding: 42px 7%;
-        row-gap: 34px;
+        padding: 62px 5% 68px;
       }
-      .why-nourma-photo {
-        height: 320px;
-        min-height: 0;
+      .why-nourma-feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 34px;
+        row-gap: 30px;
       }
-      .why-nourma-main { padding: 0; }
+      .why-nourma-feature:last-child { grid-column: auto; }
+    }
+    @media (max-width: 600px) {
+      .why-nourma { padding: 46px 7% 52px; }
       .why-nourma-title { font-size: clamp(34px, 9vw, 44px); }
-      .why-nourma-feature-grid { gap: 9px; }
-      .why-nourma-feature { padding: 14px 12px; min-height: 90px; }
-      .why-nourma-cta { margin-top: 24px; }
+      .why-nourma-description { margin-bottom: 32px; }
+      .why-nourma-feature-grid {
+        grid-template-columns: 1fr;
+        row-gap: 25px;
+      }
+      .why-nourma-feature { padding-left: 38px; }
+      .why-nourma-feature strong { font-size: 16px; }
+      .why-nourma-feature span { font-size: 14px; }
     }
 
-  
+
     /* Trial 22: clean solid green benefits band and stronger left-aligned header logo. */
     .site-header {
       justify-content: flex-start !important;
@@ -3931,24 +3900,23 @@
       <div class="why-nourma-main">
         <span class="why-nourma-kicker">What Makes Nourma Different</span>
         <h2 class="why-nourma-title" id="why-nourma-heading">Karena Ibu Layak Makan <em>Terbaik</em></h2>
-        <p class="why-nourma-description">Masa setelah melahirkan adalah perjalanan yang indah. Namun, memenuhi kebutuhan nutrisi di tengah proses pemulihan bukanlah hal yang selalu mudah. Nourma hadir untuk menemani Ibu, satu hidangan penuh kebaikan setiap harinya.</p>
 
         <div class="why-nourma-feature-grid">
           <div class="why-nourma-feature">
             <strong>Evidence-Informed Nutrition</strong>
-            <span>• Nutrisi dengan pertimbangan ilmiah</span>
+            <span>Nutrisi yang dipertimbangkan secara ilmiah untuk mendukung kebutuhan Ibu setelah melahirkan.</span>
           </div>
           <div class="why-nourma-feature">
             <strong>Healing Ingredients</strong>
-            <span>• Setiap bahan dipilih untuk mendukung kebutuhan nutrisi Ibu.</span>
+            <span>Setiap bahan dipilih dengan cermat untuk membantu memenuhi kebutuhan nutrisi selama masa pemulihan.</span>
           </div>
           <div class="why-nourma-feature">
             <strong>Bahan Segar dari Petani Lokal</strong>
-            <span>• Mengutamakan kesegaran dan kualitas dari sumber terpercaya.</span>
+            <span>Kami mengutamakan bahan segar dan berkualitas dari petani serta pemasok yang terpercaya.</span>
           </div>
           <div class="why-nourma-feature">
             <strong>Menu Sesuai Kebutuhan Ibu</strong>
-            <span>• Disesuaikan dengan kebutuhan, preferensi, dan kondisi setiap Ibu.</span>
+            <span>Menu disesuaikan dengan kebutuhan, preferensi, dan kondisi kesehatan setiap Ibu.</span>
           </div>
         </div>
 
@@ -3960,7 +3928,7 @@
       <div class="section-header">
         <span class="u-kicker">Paket Langganan</span>
         <h2 class="section-h2" id="paket-heading">Pilih Paket yang<br><em>Tepat untuk Ibu</em></h2>
-        <p class="section-desc">3 chef-prepared meals per hari, diantar fresh.</p>
+        <p class="section-desc">3 Chef-Prepared Meals per Day, Freshly Delivered</p>
       </div>
 
       <div class="pkg-grid">
@@ -4134,7 +4102,7 @@
         <h2 id="faq-heading">Ada Pertanyaan<br>dari <em>Ibu?</em></h2>
         <p>Masih ada yang ingin ditanyakan? DM kami di <strong>@nourmacatering.id</strong></p>
         <a href="https://www.instagram.com/nourmacatering.id" class="ig-handle" target="_blank" rel="noopener noreferrer" style="margin-top:20px; display:inline-flex;">
-          <span class="ig-logo" aria-hidden="true">📸</span>
+          <span class="ig-logo" aria-hidden="true"></span>
           @nourmacatering.id
         </a>
         <!-- Image accent -->
@@ -4184,7 +4152,7 @@
       <div class="footer-col">
         <h4>Kontak</h4>
         <a href="https://www.instagram.com/nourmacatering.id" target="_blank" rel="noopener noreferrer" class="footer-ig">
-          <span aria-hidden="true">📸</span> @nourmacatering.id
+          <span aria-hidden="true"></span> @nourmacatering.id
         </a>
         <p style="font-family:var(--ff-sans); font-size:13px; margin-top:10px; color:rgba(250,245,238,.5); line-height:1.6;">
           Jakarta Selatan · Coming Soon 🌙
@@ -4680,7 +4648,176 @@
     .nourma-privacy-done{display:block;margin:24px 0 0 auto;border:0;border-radius:999px;padding:12px 28px;background:var(--sage,#5C6B44);color:#fff;font:600 14px var(--ff-sans,Arial,sans-serif)}
     @media(max-width:520px){.nourma-privacy-backdrop{padding:12px}.nourma-privacy-dialog{max-height:88vh;border-radius:18px;padding:26px 21px}.nourma-privacy-content{font-size:14px}}
     @media(prefers-reduced-motion:reduce){.nourma-privacy-backdrop,.nourma-privacy-dialog{transition:none}}
-  </style>
+  
+    /* Nourma Why section: centered headings + two rows of unboxed text features */
+    #why-nourma .why-nourma-main {
+      align-items: center !important;
+      text-align: center !important;
+      width: 100% !important;
+      max-width: 1400px !important;
+      margin-inline: auto !important;
+    }
+    #why-nourma .why-nourma-kicker,
+    #why-nourma .why-nourma-title {
+      width: 100% !important;
+      max-width: 100% !important;
+      text-align: center !important;
+    }
+    #why-nourma .why-nourma-kicker {
+      margin: 0 0 14px !important;
+    }
+    #why-nourma .why-nourma-title {
+      margin: 0 auto 52px !important;
+    }
+    #why-nourma .why-nourma-feature-grid {
+      width: 100% !important;
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      grid-template-rows: repeat(2, auto) !important;
+      column-gap: clamp(42px, 8vw, 120px) !important;
+      row-gap: 38px !important;
+      text-align: left !important;
+      align-items: start !important;
+    }
+    #why-nourma .why-nourma-feature,
+    #why-nourma .why-nourma-feature:last-child {
+      grid-column: auto !important;
+      display: block !important;
+      position: relative !important;
+      min-height: 0 !important;
+      padding: 0 0 0 42px !important;
+      margin: 0 !important;
+      background: transparent !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      text-align: left !important;
+    }
+    #why-nourma .why-nourma-feature::before {
+      content: "✓" !important;
+      position: absolute !important;
+      left: 0 !important;
+      top: 1px !important;
+      width: 25px !important;
+      height: 25px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border: 2px solid var(--rose) !important;
+      border-radius: 50% !important;
+      color: var(--rose) !important;
+      background: transparent !important;
+      font: 600 16px/1 var(--ff-sans) !important;
+    }
+    #why-nourma .why-nourma-feature strong {
+      display: block !important;
+      margin: 0 0 8px !important;
+      color: var(--sage-dark) !important;
+      font: 600 18px/1.4 var(--ff-serif) !important;
+    }
+    #why-nourma .why-nourma-feature span {
+      display: block !important;
+      color: var(--muted) !important;
+      font: 400 15px/1.65 var(--ff-sans) !important;
+    }
+    @media (max-width: 700px) {
+      #why-nourma .why-nourma-title {
+        margin-bottom: 36px !important;
+      }
+      #why-nourma .why-nourma-feature-grid {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
+        row-gap: 26px !important;
+      }
+    }
+
+
+    /* Keep "Terbaik" immediately after "Makan" in the centered heading. */
+    #why-nourma .why-nourma-title {
+      white-space: normal !important;
+      text-align: center !important;
+    }
+    #why-nourma .why-nourma-title em {
+      display: inline !important;
+      white-space: nowrap;
+    }
+
+
+    /* Center the four checklist points as a balanced group across the page. */
+    #why-nourma .why-nourma-feature-grid {
+      width: 100% !important;
+      max-width: 1120px !important;
+      margin: 0 auto !important;
+      justify-items: center !important;
+      text-align: center !important;
+    }
+    #why-nourma .why-nourma-feature,
+    #why-nourma .why-nourma-feature:last-child {
+      width: 100% !important;
+      padding: 0 !important;
+      text-align: center !important;
+      justify-self: center !important;
+    }
+    #why-nourma .why-nourma-feature::before {
+      position: relative !important;
+      left: auto !important;
+      top: auto !important;
+      margin: 0 auto 12px !important;
+    }
+    #why-nourma .why-nourma-feature strong,
+    #why-nourma .why-nourma-feature span {
+      text-align: center !important;
+    }
+
+
+    /* Mobile hero: give the mother-and-child image with its overlay copy
+       approximately half of the visible phone screen. Desktop is untouched. */
+    @media (max-width: 520px) {
+      .hero-visual {
+        width: 100% !important;
+        height: 50svh !important;
+        min-height: 380px !important;
+        max-height: 500px !important;
+        aspect-ratio: auto !important;
+        overflow: hidden !important;
+      }
+      .hero-visual .hero-img-main {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        object-fit: cover !important;
+        object-position: 61% center !important;
+      }
+      .hero-visual .hero-overlay-intro {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+      }
+    }
+    @media (max-width: 380px) {
+      .hero-visual {
+        height: 48svh !important;
+        min-height: 350px !important;
+      }
+    }
+
+
+    /* Give each Why Nourma description a neat, readable two-line measure. */
+    #why-nourma .why-nourma-feature span {
+      display: block !important;
+      max-width: 350px !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+      line-height: 1.7 !important;
+    }
+    @media (max-width: 700px) {
+      #why-nourma .why-nourma-feature span {
+        max-width: 320px !important;
+      }
+    }
+
+</style>
   <script id="nourma-privacy-policy-script">
     (function(){
       const modal=document.getElementById('privacy-policy-modal');
